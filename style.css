@@ -12,15 +12,18 @@ body {
   user-select: none;
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   background: #96f1ff;
   height: 100vh;
 }
 
 header{
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   padding: 40px 100px;
   z-index: 10000;
   transition: 1s;
@@ -62,7 +65,7 @@ header #toggle::after{
   width: 100%;
   min-height: 100vh;
   padding: 100px;
-  background-color: black;
+  background-color: #96f1ff;
   background-size: cover;
   display: flex;
   align-items: center;
