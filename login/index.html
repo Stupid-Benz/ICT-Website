@@ -9,17 +9,15 @@
     <link rel="shortcut icon"
           type="image/x-icon"
           />
-    <link rel="stylesheet" type="text/css" href="login.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
     <link rel="stylesheet"
           href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
 </head>
 <body>
     <div class="container">
-        <div class="login-content">
             <form action="/login/" method="post">
                 <img class="logoimg"/>
                 <h2 class="title">Welcome</h2>
-                {% if failed %}<div class="failed">*Incorrect username or password!</div>{% endif %}
                 <div class="input-div one">
                     <div class="i">
                         <i class="fas fa-user"></i>
@@ -60,7 +58,7 @@
             </form>
         </div>
     </div>
-    <script src="login.js"></script>
+    <script src="script.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </body>
 </html>
