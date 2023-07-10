@@ -27,7 +27,20 @@ header{
   padding: 40px 100px;
   z-index: 10000;
   transition: 1s;
+  font-size: 1.25em;
 }
+
+header .logo{
+  position: relative;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  font-size:  2em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: 1s;
+}
+
 header #toggle{
   position: relative;
   width: 30px;
