@@ -122,3 +122,70 @@ header #toggle::after{
   font-weight: 600;
   text-transform: uppercase;
 }
+.border{
+  display: block;
+  margin: auto;
+  width: 300px;
+  height: 3px;
+  background: #3498db;
+  margin-bottom: 40px;
+}.content{
+	margin-top: 100px;
+}
+.content h1{
+  color: white;
+  font-size: 2.5em;
+}
+.content h1 span{
+	color: #f44336;
+  font-size: 1.2em;
+}
+.content span{
+  color: #40c3ff;
+  font-size: 1.2em;
+}
+.content h3{
+  color: lightgreen;
+  font-size: 1.75em;
+}
+.button{
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 2em;
+  position: relative;
+  padding: 20px;
+}
+.button img{
+  width: 75px;
+}
+.button:hover{
+  color: #f44336;
+}
+.content h2{
+  color: white;
+  font-size: 2.5em;
+	padding-bottom: 25px;
+}
+.content h2 span{
+  color: #40c3ff;
+  font-size: 1.2em;
+}
+.content p{
+  font-size: 1.2em;
+  color: white;
+  font-weight: 300;
+  text-align: justify;
+  width: 90%;
+}
+.content a{
+  position: relative;
+  display: inline-block;
+  margin-top: 20px;
+  background: white;
+  color: black;
+  padding: 10px 30px;
+  text-decoration: none;
+  font-size: 1.2em;
+  font-weight: 500;
+}
