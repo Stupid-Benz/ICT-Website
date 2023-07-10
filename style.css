@@ -1,19 +1,26 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&displayswap');
-*{
-  margin: 0;
+* {
   padding: 0;
+  margin: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-  background-color: #96f1ff;
+  transition: 1s;
+}
+
+body {
+  font-family: "Poppins", "Comic Sans MS", sans-serif;
+  overflow: hidden;
+  user-select: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #96f1ff;
+  height: 100vh;
 }
 
 header{
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   padding: 40px 100px;
   z-index: 10000;
   transition: 1s;
