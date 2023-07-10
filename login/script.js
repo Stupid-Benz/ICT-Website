@@ -3,6 +3,7 @@ const togglePassword = document.getElementById("togglePassword");
 const password = document.getElementById("id_password");
 const username = document.getElementById("id_username");
 const submit = document.getElementById("submit");
+const send = document.getElementById("send");
 
 function addcl() {
   let parent = this.parentNode.parentNode;
