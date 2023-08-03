@@ -1,23 +1,41 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&displayswap');
+@import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&displayswap");
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  transition: 1s;
 }
 
 body {
   font-family: "Poppins", "Comic Sans MS", sans-serif;
-  overflow: hidden;
-  user-select: none;
-  display: flex;
-  justify-content: center;
-  /* align-items: center; */
-  background: #96f1ff;
-  height: 100vh;
+  transition: all 0.3s ease-in-out;
 }
 
-header{
+body.dark .banner {
+  background-color: #498c88;
+}
+
+body.dark .logo, body.dark h2, body.dark p {
+  color: white;
+}
+
+body.dark .content span {
+  color: #d7ffff!important;
+}
+
+body.dark .content a {
+  background-color: #2c2b26;
+  color: white;
+}
+
+body.dark .dark-mode{
+  background-color: #2c2b26;
+}
+
+body.dark #navigation{
+  background: #59a5ba;
+}
+
+header {
   position: absolute;
   top: 0;
   left: 0;
@@ -26,53 +44,51 @@ header{
   justify-content: space-between;
   padding: 40px 100px;
   z-index: 10000;
-  transition: 1s;
   font-size: 1.25em;
   align-items: center;
 }
 
-header .logo{
+header .logo {
   position: relative;
   color: black;
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 2px;
-  transition: 1s;
 }
 
-header #toggle{
+header #toggle {
   position: relative;
   width: 30px;
   height: 30px;
   cursor: pointer;
 }
-header #toggle::before{
-  content: '';
+header #toggle::before {
+  content: "";
   position: absolute;
   top: 7px;
   width: 100%;
   height: 2px;
   background: black;
 }
-header #toggle::after{
-  content: '';
+header #toggle::after {
+  content: "";
   position: absolute;
   bottom: 7px;
   width: 100%;
   height: 2px;
   background: black;
 }
-.banner.active header #toggle::before{
+.banner.active header #toggle::before {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) rotate(45deg);
 }
-.banner.active header #toggle::after{
+.banner.active header #toggle::after {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) rotate(-45deg);
 }
-.banner{
+.banner {
   position: relative;
   width: 100%;
   min-height: 100vh;
@@ -81,13 +97,13 @@ header #toggle::after{
   background-size: cover;
   display: flex;
   align-items: center;
-  transition: 0.5s;
+  transition: all 0.5s;
   z-index: 2;
 }
-.banner.active{
+.banner.active {
   transform: translateX(-400px);
 }
-#navigation{
+#navigation {
   position: fixed;
   top: 0;
   right: -200px;
@@ -99,21 +115,21 @@ header #toggle::after{
   place-items: center;
   transition: 0.5s;
 }
-#navigation.active{
+#navigation.active {
   right: 0;
 }
-#navigation ul a:hover{
-	color: black;
+#navigation ul a:hover {
+  color: black;
 }
-#navigation ul{
+#navigation ul {
   position: relative;
   display: flex;
   flex-direction: column;
 }
-#navigation ul li{
+#navigation ul li {
   list-style: none;
 }
-#navigation ul li a{
+#navigation ul li a {
   color: white;
   text-decoration: none;
   display: inline-block;
@@ -121,7 +137,7 @@ header #toggle::after{
   font-weight: 600;
   text-transform: uppercase;
 }
-.border{
+.border {
   display: block;
   margin: auto;
   width: 300px;
@@ -129,26 +145,26 @@ header #toggle::after{
   background: #3498db;
   margin-bottom: 40px;
 }
-.content{
-	margin-top: 100px;
+.content {
+  margin-top: 100px;
 }
-.content h1{
+.content h1 {
   color: white;
   font-size: 2.5em;
 }
-.content h1 span{
-	color: #f44336;
+.content h1 span {
+  color: #f44336;
   font-size: 1.2em;
 }
-.content span{
+.content span {
   color: #40c3ff;
   font-size: 1.2em;
 }
-.content h3{
+.content h3 {
   color: lightgreen;
   font-size: 1.75em;
 }
-.button{
+.button {
   color: white;
   text-decoration: none;
   font-weight: 700;
@@ -156,29 +172,29 @@ header #toggle::after{
   position: relative;
   padding: 20px;
 }
-.button img{
+.button img {
   width: 75px;
 }
-.button:hover{
+.button:hover {
   color: #f44336;
 }
-.content h2{
+.content h2 {
   color: black;
   font-size: 2.5em;
-	padding-bottom: 25px;
+  padding-bottom: 25px;
 }
-.content h2 span{
-  color:#2bcffc;
+.content h2 span {
+  color: #2bcffc;
   font-size: 1.2em;
 }
-.content p{
+.content p {
   font-size: 1.2em;
   color: black;
   font-weight: 300;
   text-align: justify;
   width: 90%;
 }
-.content a{
+.content a {
   position: relative;
   display: inline-block;
   margin-top: 20px;
@@ -190,15 +206,50 @@ header #toggle::after{
   font-weight: 500;
   border-radius: 1.5em;
 }
-::-webkit-scrollbar{
+.i {
+  color: #d9d9d9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.i i {
+  transition: 0.3s;
+}
+.dark-mode {
+  position: relative;
+  height: 46px;
+  width: 100px;
+  border-radius: 50px;
+  background-color: #fff;
+  box-shadow: 0 5px 10px rgb(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+.dark-mode::before {
+  content: "";
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  background: #96f1ff;
+  border-radius: 50%;
+  top: 50%;
+  left: 3px;
+  transform: translateY(-50%);
+  transition: all 0.3s ease-in-out;
+}
+.dark-mode.active::before {
+  background: #498c88;
+  left: calc(100% - 40px - 3px);
+}
+::-webkit-scrollbar {
   background: black;
   width: 14px;
 }
-::-webkit-scrollbar-track{
+::-webkit-scrollbar-track {
   box-shadow: inset 0 0 10px #00000070;
   border-radius: 10px;
 }
-::-webkit-scrollbar-thumb{
-  background: #5ACFF5;
+::-webkit-scrollbar-thumb {
+  background: #5acff5;
   border-radius: 10px;
 }

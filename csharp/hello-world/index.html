@@ -4,7 +4,7 @@
 <head>
     <title>ABC Primary School Online Learning Platform</title>
     <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+    <link id="css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/go.min.js"></script>
     <script>hljs.highlightAll();</script>
@@ -17,9 +17,10 @@
 <body>
     <section class="banner" id="sec">
         <header>
-            <a href="../" class="logo">
+            <a href="../.." class="logo">
                 <h1 id="title">ABC E-Learning Platform</h1>
             </a>
+            <div class="dark-mode"></div>
             <div id="toggle" onclick="toggle()"></div>
         </header>
         <div class="content">
@@ -49,11 +50,11 @@ namespace HelloWorld
     </section>
     <div id="navigation">
         <ul>
-            <li><a href="../">Home</a></li>
-            <li><a href="">About</a></li>
+            <li><a href="../..">Home</a></li>
+            <li><a href="">C#</a></li>
         </ul>
     </div>
-    <script type="text/javascript" src="../script.js"></script>
+    <script type="text/javascript" src="script.js"></script>
     <script type="text/javascript" src="../prism.js"></script>
 </body>
 

@@ -3,18 +3,59 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  transition: 1s;
 }
 
 body {
   font-family: "Poppins", "Comic Sans MS", sans-serif;
-  overflow: hidden;
-  user-select: none;
-  display: flex;
-  justify-content: center;
-  /* align-items: center; */
+  background-color: #96f1ff;
+}
+
+body.dark .banner, body.dark {
+  background-color: #498c88;
+}
+
+body.dark .logo, body.dark h2, body.dark p {
+  color: white;
+}
+
+body.dark .content a {
+  background-color: #2c2b26;
+  color: white;
+}
+
+body.dark .dark-mode{
+  background-color: #2c2b26;
+}
+
+body.dark #navigation{
+  background: #59a5ba;
+}
+
+.dark-mode {
+  position: relative;
+  height: 46px;
+  width: 100px;
+  border-radius: 50px;
+  background-color: #fff;
+  box-shadow: 0 5px 10px rgb(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.dark-mode::before {
+  content: "";
+  position: absolute;
+  height: 40px;
+  width: 40px;
   background: #96f1ff;
-  height: 100vh;
+  border-radius: 50%;
+  top: 50%;
+  left: 3px;
+  transform: translateY(-50%);
+  transition: all 0.3s ease-in-out;
+}
+.dark-mode.active::before {
+  background: #498c88;
+  left: calc(100% - 40px - 3px);
 }
 
 header{
@@ -26,7 +67,6 @@ header{
   justify-content: space-between;
   padding: 40px 100px;
   z-index: 10000;
-  transition: 1s;
   font-size: 1.25em;
   align-items: center;
 }
@@ -37,7 +77,6 @@ header .logo{
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 2px;
-  transition: 1s;
 }
 
 header #toggle{
@@ -81,7 +120,7 @@ header #toggle::after{
   background-size: cover;
   display: flex;
   align-items: center;
-  transition: 0.5s;
+  transition: all 0.5s;
   z-index: 2;
 }
 .banner.active{
@@ -128,9 +167,6 @@ header #toggle::after{
   height: 3px;
   background: #3498db;
   margin-bottom: 40px;
-}
-.content{
-	margin-top: 100px;
 }
 .content h1{
   color: white;
@@ -194,12 +230,37 @@ header #toggle::after{
   font-weight: 500;
   border-radius: 1.5em;
 }
+.dark-mode {
+  position: relative;
+  height: 46px;
+  width: 100px;
+  border-radius: 50px;
+  background-color: #fff;
+  box-shadow: 0 5px 10px rgb(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+.dark-mode::before {
+  content: "";
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  background: #96f1ff;
+  border-radius: 50%;
+  top: 50%;
+  left: 3px;
+  transform: translateY(-50%);
+  transition: all 0.3s ease-in-out;
+}
+.dark-mode.active::before {
+  background: #498c88;
+  left: calc(100% - 40px - 3px);
+}
 ::-webkit-scrollbar{
-  background: black;
+  background: #96f1ff;
   width: 14px;
 }
 ::-webkit-scrollbar-track{
-  box-shadow: inset 0 0 10px #00000070;
+  box-shadow: inset 0 0 10px #96f1ff;
   border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb{
