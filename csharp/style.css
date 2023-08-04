@@ -255,6 +255,9 @@ header #toggle::after{
   background: #498c88;
   left: calc(100% - 40px - 3px);
 }
+#banner {
+  border-radius: 2em;
+}
 ::-webkit-scrollbar{
   background: #96f1ff;
   width: 14px;

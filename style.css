@@ -237,6 +237,9 @@ header #toggle::after {
   transform: translateY(-50%);
   transition: all 0.3s ease-in-out;
 }
+#banner {
+  border-radius: 2em; 
+}
 .dark-mode.active::before {
   background: #498c88;
   left: calc(100% - 40px - 3px);
