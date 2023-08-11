@@ -158,12 +158,8 @@ header #toggle::after {
   color: white;
   font-size: 2.5em;
 }
-.content h1 span {
-  color: #f44336;
-  font-size: 1.2em;
-}
 .content span {
-  color: #40c3ff;
+  color: #f44336;
   font-size: 1.2em;
 }
 .content h3 {
@@ -194,7 +190,7 @@ header #toggle::after {
   padding-bottom: 25px;
 }
 .content h2 span {
-  color: #2bcffc;
+  color: #f44236;
   font-size: 1.2em;
 }
 .content p {
@@ -208,14 +204,19 @@ header #toggle::after {
   position: relative;
   display: inline-block;
   margin-top: 20px;
-  background: white;
-  color: black;
+  background-image: linear-gradient(to right, #32be8f, #38d39f, #32be8f);
+  background-size: 200%;
+  color: white;
   padding: 10px 30px;
   text-decoration: none;
   font-size: 1.2em;
   font-weight: 500;
   border-radius: 1.5em;
   text-align: center;
+  transition: 0.5s;
+}
+.content a:hover {
+  background-position: right;
 }
 .grid{
   display: grid;

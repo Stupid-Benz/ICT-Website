@@ -179,12 +179,8 @@ header #toggle::after {
   color: white;
   font-size: 2.5em;
 }
-.content h1 span {
-  color: #f44336;
-  font-size: 1.2em;
-}
 .content h2 span {
-  color: #40c3ff;
+  color: #f44336;
   font-size: 1.2em;
 }
 .content h3 {
