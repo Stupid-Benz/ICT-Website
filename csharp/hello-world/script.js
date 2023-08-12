@@ -39,4 +39,5 @@ function toggle() {
 	var nav = document.getElementById('navigation');
 	sec.classList.toggle('active');
 	nav.classList.toggle('active');
+	body.classList.toggle('active');
 }

@@ -284,3 +284,14 @@ header #toggle::after {
   background: #5fa4ac;
   border-radius: 10px;
 }
+::-webkit-scrollbar {
+	background: #96f1ff;
+	width: 14px;
+}
+.active::-webkit-scrollbar {
+	background: #40c3ff;
+}
+::-webkit-scrollbar-thumb {
+	background: #32be8f;
+	border-radius: 10px;
+}
