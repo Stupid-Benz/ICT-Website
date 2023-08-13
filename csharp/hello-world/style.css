@@ -210,10 +210,6 @@ header #toggle::after {
   font-size: 2.5em;
   padding-bottom: 25px;
 }
-.content h2 span {
-  color: #2bcffc;
-  font-size: 1.2em;
-}
 .content p {
   font-size: 1.2em;
   color: black;
@@ -273,16 +269,14 @@ header #toggle::after {
   background: #5acff5;
   border-radius: 10px;
 }
-.dark::-webkit-scrollbar {
-  background: #498c88;
-}
-.dark::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 10px #498c88;
-  border-radius: 10px;
-}
 .dark::-webkit-scrollbar-thumb {
-  background: #5fa4ac;
-  border-radius: 10px;
+  background: #0eaadc;
+}
+.dark::-webkit-scrollbar {
+  background: #0095ab;
+}
+.dark.active::-webkit-scrollbar {
+  background: #59a5ba;
 }
 ::-webkit-scrollbar {
 	background: #96f1ff;
