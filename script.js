@@ -2,6 +2,21 @@ const body = document.querySelector("body");
 const dark_mode = document.querySelector(".dark-mode");
 const add_font_size = document.querySelector(".fa-plus");
 const minus_font_size = document.querySelector(".fa-minus");
+const grids = document.querySelectorAll(".grid");
+const input = document.querySelector(".input");
+
+let font_size = localStorage.getItem("font-size");
+if (font_size != '0') {
+	body.style.fontSize = font_size.toString() + "em";
+	if (font_size > 1.5) {
+		grids.forEach((grid) => {
+			grid.classList.add("two-column");
+		});
+	}
+}
+else {
+	font_size = '1';
+}
 
 let getMode = localStorage.getItem("mode");
 if (getMode && getMode === "dark") {
@@ -20,6 +35,59 @@ dark_mode.addEventListener("click", () => {
 	localStorage.setItem("mode", "dark");
 });
 
+add_font_size.addEventListener("click", () => {
+	font_size *= 1.25;
+	font_size = Math.round(font_size * 100) / 100;
+	body.style.fontSize = font_size.toString() + "em";
+	localStorage.setItem("font-size", font_size);
+	input.value = font_size;
+	if (font_size >= 1.5) {
+		grids.forEach((grid) => {
+			if (grid.classList.contains("two-column")) {
+				grid.classList.add("two-column");
+			}
+		});
+	}
+})
+
+minus_font_size.addEventListener("click", () => {
+	font_size *= 0.8;
+	font_size = Math.round(font_size * 100) / 100;
+	body.style.fontSize = font_size.toString() + "em";
+	localStorage.setItem("font-size", font_size);
+	input.value = font_size;
+	if (font_size < 1.5) {
+		grids.forEach((grid) => {
+			if (grid.classList.contains("two-column")) {
+				grid.classList.remove("two-column");
+			}
+		});
+	}
+})
+
+input.value = font_size
+input.addEventListener("blur", () => {
+	font_size = input.value;
+	font_size = Math.round(font_size * 100) / 100;
+	input.value = font_size;
+	body.style.fontSize = font_size.toString() + "em";
+	localStorage.setItem("font-size", font_size);
+	if (font_size >= 1.5) {
+		grids.forEach((grid) => {
+			if (grid.classList.contains("two-column")) {
+				grid.classList.add("two-column");
+			}
+		});
+	}
+	else {
+		grids.forEach((grid) => {
+			if (grid.classList.contains("two-column")) {
+				grid.classList.remove("two-column");
+			}
+		});
+	}
+})
+
 function toggle() {
 	var sec = document.getElementById('sec');
 	var nav = document.getElementById('navigation');
@@ -27,6 +95,7 @@ function toggle() {
 	nav.classList.toggle('active');
 	body.classList.toggle('active');
 }
+
 
 /* 
  * (class)Progress<nowValue, minValue, maxValue>

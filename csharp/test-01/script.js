@@ -11,9 +11,8 @@ function swapcss(sheet) {
 	document.getElementById("css").setAttribute("href", sheet);
 }
 
-function swapbanner(banner, saturate = "100%") {
+function swapbanner(banner) {
 	document.getElementById("banner").setAttribute("src", banner);
-	document.getElementById("banner").setAttribute("style", `filter: saturate(${saturate});`);
 }
 
 let getMode = localStorage.getItem("mode");
@@ -21,7 +20,7 @@ if (getMode && getMode === "dark") {
 	body.classList.add("dark");
 	dark_mode.classList.add("active");
 	swapcss("https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/dark.min.css");
-	swapbanner("../../assets/dark.gif", "68.5%");
+	swapbanner("../../assets/dark.gif");
 }
 
 dark_mode.addEventListener("click", () => {
@@ -35,7 +34,7 @@ dark_mode.addEventListener("click", () => {
 	}
 	else {
 		swapcss("https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/dark.min.css");
-		swapbanner("../../assets/dark.gif", "68.5%");
+		swapbanner("../../assets/dark.gif");
 	}
 	localStorage.setItem("mode", "dark");
 });

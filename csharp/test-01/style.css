@@ -12,7 +12,7 @@ body {
 
 body.dark .banner,
 body.dark {
-  background-color: #498c88;
+  background-color: #0095ab;
 }
 
 body.dark .logo,
@@ -50,7 +50,7 @@ body.dark .dark-mode {
 }
 
 body.dark #navigation {
-  background: #59a5ba;
+  background: #00abf9;
 }
 
 .dark-mode {
@@ -343,7 +343,7 @@ video {
   transition: all 0.3s ease-in-out;
 }
 .dark-mode.active::before {
-  background: #498c88;
+  background: #0095ab;
   left: calc(100% - 40px - 3px);
 }
 #banner {
@@ -362,13 +362,13 @@ video {
   border-radius: 10px;
 }
 .dark::-webkit-scrollbar-thumb {
-  background: #0eaadc;
+  background: #3ce4ab;
 }
 .dark::-webkit-scrollbar {
   background: #0095ab;
 }
 .dark.active::-webkit-scrollbar {
-  background: #59a5ba;
+  background: #00abf9;
 }
 ::-webkit-scrollbar {
   background: #96f1ff;
@@ -381,3 +381,4 @@ video {
   background: #32be8f;
   border-radius: 10px;
 }
+
