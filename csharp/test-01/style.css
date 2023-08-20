@@ -73,13 +73,12 @@ body.dark .font {
 }
 .overlay p {
   color: white;
-  top: 80%;
+  top: 90%;
   left: 50%;
   text-align: center;
   position: absolute;
   transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  font-size: 1.5em;
+  font-size: 1.25em;
   font-weight: 700;
 }
 .overlay .animation {
@@ -89,7 +88,6 @@ body.dark .font {
   font-size: 50px;
   color: white;
   transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
 }
 
 .dark-mode {

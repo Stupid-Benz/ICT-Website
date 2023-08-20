@@ -4,6 +4,23 @@ const add_font_size = document.querySelector(".fa-plus");
 const minus_font_size = document.querySelector(".fa-minus");
 const grids = document.querySelectorAll(".grid");
 const font = document.querySelector(".font");
+const disable_overlay = document.querySelector(".disable-overlay");
+
+document.querySelector(".clear").addEventListener("click", ()=>{
+	localStorage.clear();
+	location.reload();
+});
+
+let disableOverlay = localStorage.getItem("disableOverlay");
+if (disableOverlay) {
+	document.querySelector(".overlay").setAttribute("style", "display: none;");
+}
+
+disable_overlay.addEventListener("click", ()=>{
+	document.querySelector(".overlay").setAttribute("style", "display: none;");
+	localStorage.setItem("disableOverlay", true);
+})
+
 
 let font_size = localStorage.getItem("font-size");
 if (font_size != '0' && font_size) {
