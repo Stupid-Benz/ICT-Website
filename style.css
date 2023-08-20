@@ -72,7 +72,7 @@ body.dark .input {
   font-size: 1.5em;
   font-weight: 700;
 }
-.overlay img{
+.overlay .animation {
   position: absolute;
   top: 50%;
   left: 50%;
