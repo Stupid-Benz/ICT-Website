@@ -6,7 +6,7 @@
 }
 body {
   font-family: "Poppins", "Comic Sans MS", sans-serif;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s;
 }
 body.dark .banner {
   background-color: #0095ab;

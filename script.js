@@ -22,18 +22,6 @@ disable_overlay.addEventListener("click", ()=>{
 })
 
 
-let font_size = localStorage.getItem("font-size");
-if (font_size != '0' && font_size) {
-	body.style.fontSize = font_size.toString() + "em";
-	if (font_size > 1.5) {
-		grids.forEach((grid) => {
-			grid.classList.add("two-column");
-		});
-	}
-}
-else {
-	font_size = '1';
-}
 
 let getMode = localStorage.getItem("mode");
 if (getMode && getMode === "dark") {
@@ -52,6 +40,23 @@ dark_mode.addEventListener("click", () => {
 	localStorage.setItem("mode", "dark");
 });
 
+let font_size = localStorage.getItem("font-size");
+if (font_size != '0' && font_size) {
+	body.style.fontSize = font_size.toString() + "em";
+	if (font_size >= 1.5) {
+		grids.forEach((grid) => {
+			grid.classList.add("two-column");
+		});
+		font.style.fontSize = "0.8em";
+	}
+	else if (font_size <= 0.8) {
+		font.style.fontSize = "1.5em";
+	}
+}
+else {
+	font_size = '1';
+}
+
 add_font_size.addEventListener("click", () => {
 	font_size *= 1.25;
 	font_size = Math.round(font_size * 100) / 100;
@@ -64,6 +69,13 @@ add_font_size.addEventListener("click", () => {
 				grid.classList.add("two-column");
 			}
 		});
+		font.style.fontSize = "0.8em";
+	}
+	else if (font_size <= 0.8) {
+		font.style.fontSize = "1.5em";
+	}
+	else {
+		font.style.fontSize = "1em";
 	}
 })
 
@@ -73,12 +85,16 @@ minus_font_size.addEventListener("click", () => {
 	body.style.fontSize = font_size.toString() + "em";
 	localStorage.setItem("font-size", font_size);
 	font.value = font_size;
-	if (font_size < 1.5) {
+	if (font_size < 1.5 && font_size > 0.8) {
 		grids.forEach((grid) => {
 			if (grid.classList.contains("two-column")) {
 				grid.classList.remove("two-column");
 			}
 		});
+		font.style.fontSize = "1em";
+	}
+	else if (font_size <= 0.8) {
+		font.style.fontSize = "1.5em";
 	}
 })
 
@@ -102,6 +118,15 @@ font.addEventListener("blur", () => {
 				grid.classList.remove("two-column");
 			}
 		});
+	}
+	if (font_size >= 1.5) {
+		font.style.fontSize = "0.8em";
+	}
+	else if (font_size < 1.5 && font_size > 0.8) {
+		font.style.fontSize = "1em";
+	}
+	else {
+		font.style.fontSize = "1.5em";
 	}
 })
 

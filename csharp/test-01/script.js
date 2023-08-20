@@ -29,10 +29,11 @@ disable_overlay.addEventListener("click", ()=>{
 let font_size = localStorage.getItem("font-size");
 if (font_size != '0' && font_size) {
 	body.style.fontSize = font_size.toString() + "em";
-	if (font_size > 1.5) {
-		grids.forEach((grid) => {
-			grid.classList.add("two-column");
-		});
+	if (font_size >= 1.5) {
+		font.style.fontSize = "0.8em";
+	}
+	else if (font_size <= 0.8) {
+		font.style.fontSize = "1.5em";
 	}
 }
 else {
@@ -46,6 +47,15 @@ add_font_size.addEventListener("click", () => {
 	body.style.fontSize = font_size.toString() + "em";
 	localStorage.setItem("font-size", font_size);
 	font.value = font_size;
+	if (font_size >= 1.5) {
+		font.style.fontSize = "0.8em";
+	}
+	else if (font_size <= 0.8) {
+		font.style.fontSize = "1.5em";
+	}
+	else {
+		font.style.fontSize = "1em";
+	}
 })
 
 minus_font_size.addEventListener("click", () => {
@@ -54,6 +64,12 @@ minus_font_size.addEventListener("click", () => {
 	body.style.fontSize = font_size.toString() + "em";
 	localStorage.setItem("font-size", font_size);
 	font.value = font_size;
+	if (font_size < 1.5) {
+		font.style.fontSize = "1em";
+	}
+	else if (font_size <= 0.8) {
+		font.style.fontSize = "1.5em";
+	}
 })
 
 font.value = font_size
@@ -63,6 +79,15 @@ font.addEventListener("blur", () => {
 	font.value = font_size;
 	body.style.fontSize = font_size.toString() + "em";
 	localStorage.setItem("font-size", font_size);
+	if (font_size >= 1.5) {
+		font.style.fontSize = "0.8em";
+	}
+	else if (font_size < 1.5 && font_size > 0.8) {
+		font.style.fontSize = "1em";
+	}
+	else {
+		font.style.fontSize = "1.5em";
+	}
 })
 
 
