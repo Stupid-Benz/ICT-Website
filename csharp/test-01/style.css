@@ -53,6 +53,45 @@ body.dark #navigation {
   background: #00abf9;
 }
 
+body.dark .font {
+  color: white;
+  border-bottom: 2px solid white;
+}
+
+
+.overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,1);
+  z-index: 100000;
+}
+.overlay p {
+  color: white;
+  top: 80%;
+  left: 50%;
+  text-align: center;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  font-size: 1.5em;
+  font-weight: 700;
+}
+.overlay .animation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 50px;
+  color: white;
+  transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+}
+
 .dark-mode {
   position: relative;
   height: 46px;
@@ -317,10 +356,30 @@ input {
   font-weight: 500;
   border-radius: 1.5em;
 }
-video {
-  width: 100%;
-  border-radius: 2em;
+
+.font-size {
+  width: 12.5%;
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+  grid-gap: 0 5%;
 }
+.i {
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.i i {
+  cursor: pointer;
+}
+.font {
+  position: relative;
+  border-bottom: 2px solid black;
+  color: black;
+  text-align: center;
+  font-size: 1em;
+}
+
 .dark-mode {
   position: relative;
   height: 46px;
@@ -382,3 +441,8 @@ video {
   border-radius: 10px;
 }
 
+@media screen and (max-width: 1080px) {
+  .overlay {
+    display: block;
+  }
+}

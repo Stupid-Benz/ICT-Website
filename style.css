@@ -45,7 +45,7 @@ body.dark .progress-bar {
 body.dark .i {
   color: white;
 }
-body.dark .input {
+body.dark .font {
   color: white;
   border-bottom: 2px solid white;
 }
@@ -63,7 +63,7 @@ body.dark .input {
 }
 .overlay p {
   color: white;
-  top: 25%;
+  top: 80%;
   left: 50%;
   text-align: center;
   position: absolute;
@@ -244,7 +244,7 @@ input {
   text-align: center;
   font-size: 1em;
 }
-.input {
+.font {
   position: relative;
   border-bottom: 2px solid black;
   color: black;
@@ -357,7 +357,7 @@ input {
   border-radius: 10px;
   transition: all 0.5s;
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1080px) {
   .overlay {
     display: block;
   }

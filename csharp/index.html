@@ -9,15 +9,44 @@
     <meta name="description" content="An online learning platform for ABC Primary School students">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../favicon.ico" />
+    
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"></script>
 </head>
 
 <body>
+    <div class="overlay">
+        <p>
+            Turn to landscape mode to have better user experience.
+        </p>
+        <div class="animation" id="animation">
+            <script>
+                var animation = bodymovin.loadAnimation({
+                    container: document.getElementById("animation"),
+                    path: '../assets/animation.json',
+                    render: 'svg',
+                    loop: true,
+                    autoplay: true,
+                    name: 'animation'
+                });
+            </script>
+        </div>
+    </div>
     <section class="banner" id="sec">
         <header>
             <a href=".." class="logo">
                 <img id="banner" src="../assets/default.gif">
             </a>
             <div class="dark-mode"></div>
+            <div class="font-size">
+                <div class="i">
+                    <i class="fas fa-plus"></i>
+                </div>
+                <input type="text" class="font" />
+                <div class="i">
+                    <i class="fas fa-minus"></i>
+                </div>
+            </div>
             <div id="toggle" onclick="toggle()"></div>
         </header>
         <div class="content">

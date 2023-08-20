@@ -34,6 +34,46 @@ body.dark #navigation {
   background: #00abf9;
 }
 
+body.dark .i {
+  color: white;
+}
+body.dark .font {
+  color: white;
+  border-bottom: 2px solid white;
+}
+
+.overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 1);
+  z-index: 100000;
+}
+.overlay p {
+  color: white;
+  top: 80%;
+  left: 50%;
+  text-align: center;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  font-size: 1.5em;
+  font-weight: 700;
+}
+.overlay .animation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 50px;
+  color: white;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
 .dark-mode {
   position: relative;
   height: 46px;
@@ -104,6 +144,23 @@ header #toggle::after {
   height: 2px;
   background: black;
 }
+
+.font-size {
+  width: 12.5%;
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+  grid-gap: 0 5%;
+}
+.i {
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.i i {
+  cursor: pointer;
+}
+
 .banner.active header #toggle::before {
   top: 50%;
   left: 50%;
@@ -205,6 +262,22 @@ header #toggle::after {
 .button:hover {
   color: #f44336;
 }
+input {
+  left: 0;
+  top: 0;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: none;
+  color: #555;
+  text-align: center;
+  font-size: 1em;
+}
+.font {
+  position: relative;
+  border-bottom: 2px solid black;
+  color: black;
+}
 .content h2 {
   color: black;
   font-size: 2.5em;
@@ -293,4 +366,8 @@ video {
   background: #32be8f;
   border-radius: 10px;
 }
-
+@media screen and (max-width: 1080px) {
+  .overlay {
+    display: block;
+  }
+}

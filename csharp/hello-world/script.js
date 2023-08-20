@@ -1,5 +1,48 @@
 const body = document.querySelector("body");
 const dark_mode = document.querySelector(".dark-mode");
+const add_font_size = document.querySelector(".fa-plus");
+const minus_font_size = document.querySelector(".fa-minus");
+const font = document.querySelector(".font");
+
+let font_size = localStorage.getItem("font-size");
+if (font_size != '0' && font_size) {
+	body.style.fontSize = font_size.toString() + "em";
+	if (font_size > 1.5) {
+		grids.forEach((grid) => {
+			grid.classList.add("two-column");
+		});
+	}
+}
+else {
+	font_size = '1';
+}
+
+
+add_font_size.addEventListener("click", () => {
+	font_size *= 1.25;
+	font_size = Math.round(font_size * 100) / 100;
+	body.style.fontSize = font_size.toString() + "em";
+	localStorage.setItem("font-size", font_size);
+	font.value = font_size;
+})
+
+minus_font_size.addEventListener("click", () => {
+	font_size *= 0.8;
+	font_size = Math.round(font_size * 100) / 100;
+	body.style.fontSize = font_size.toString() + "em";
+	localStorage.setItem("font-size", font_size);
+	font.value = font_size;
+})
+
+font.value = font_size
+font.addEventListener("blur", () => {
+	font_size = font.value;
+	font_size = Math.round(font_size * 100) / 100;
+	font.value = font_size;
+	body.style.fontSize = font_size.toString() + "em";
+	localStorage.setItem("font-size", font_size);
+})
+
 
 function swapcss(sheet) {
 	document.getElementById("css").setAttribute("href", sheet);

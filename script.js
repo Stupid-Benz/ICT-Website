@@ -3,7 +3,7 @@ const dark_mode = document.querySelector(".dark-mode");
 const add_font_size = document.querySelector(".fa-plus");
 const minus_font_size = document.querySelector(".fa-minus");
 const grids = document.querySelectorAll(".grid");
-const input = document.querySelector(".input");
+const font = document.querySelector(".font");
 
 let font_size = localStorage.getItem("font-size");
 if (font_size != '0' && font_size) {
@@ -40,7 +40,7 @@ add_font_size.addEventListener("click", () => {
 	font_size = Math.round(font_size * 100) / 100;
 	body.style.fontSize = font_size.toString() + "em";
 	localStorage.setItem("font-size", font_size);
-	input.value = font_size;
+	font.value = font_size;
 	if (font_size >= 1.5) {
 		grids.forEach((grid) => {
 			if (grid.classList.contains("two-column")) {
@@ -55,7 +55,7 @@ minus_font_size.addEventListener("click", () => {
 	font_size = Math.round(font_size * 100) / 100;
 	body.style.fontSize = font_size.toString() + "em";
 	localStorage.setItem("font-size", font_size);
-	input.value = font_size;
+	font.value = font_size;
 	if (font_size < 1.5) {
 		grids.forEach((grid) => {
 			if (grid.classList.contains("two-column")) {
@@ -65,11 +65,11 @@ minus_font_size.addEventListener("click", () => {
 	}
 })
 
-input.value = font_size
-input.addEventListener("blur", () => {
-	font_size = input.value;
+font.value = font_size
+font.addEventListener("blur", () => {
+	font_size = font.value;
 	font_size = Math.round(font_size * 100) / 100;
-	input.value = font_size;
+	font.value = font_size;
 	body.style.fontSize = font_size.toString() + "em";
 	localStorage.setItem("font-size", font_size);
 	if (font_size >= 1.5) {
