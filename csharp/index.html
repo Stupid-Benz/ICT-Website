@@ -15,7 +15,7 @@
     <section class="banner" id="sec">
         <header>
             <a href=".." class="logo">
-                <img id="banner" src="default.gif" style="filter: saturate(100%);">
+                <img id="banner" src="/assets/default.gif" style="filter: saturate(100%);">
             </a>
             <div class="dark-mode"></div>
             <div id="toggle" onclick="toggle()"></div>
@@ -27,25 +27,25 @@
             <div class="progress"></div>
             <div class="grid">
                 <a href="hello-world" class="visited">Hello World</a>
-                <a href="csharp">C# Class</a>
-                <a href="csharp">C# Class</a>
-                <a href="csharp">C# Class</a>
-                <a href="csharp">C# Class</a>
-                <a href="csharp">C# Class</a>
-                <a href="csharp">C# Class</a>
-                <a href="csharp">Test 01</a>
+                <a href="">C# Class</a>
+                <a href="">C# Class</a>
+                <a href="">C# Class</a>
+                <a href="">C# Class</a>
+                <a href="">C# Class</a>
+                <a href="">C# Class</a>
+                <a href="test-01">Test 01</a>
             </div>
             <h3>Algorithm</h3>
             <div class="progress"></div>
             <div class="grid">
-                <a href="csharp">C# Class</a>
-                <a href="csharp">C# Class</a>
-                <a href="csharp">C# Class</a>
-                <a href="csharp">C# Class</a>
-                <a href="csharp">C# Class</a>
-                <a href="csharp">C# Class</a>
-                <a href="csharp">C# Class</a>
-                <a href="csharp">C# Class</a>
+                <a href="">C# Class</a>
+                <a href="">C# Class</a>
+                <a href="">C# Class</a>
+                <a href="">C# Class</a>
+                <a href="">C# Class</a>
+                <a href="">C# Class</a>
+                <a href="">C# Class</a>
+                <a href="">C# Class</a>
             </div>
         </div>
     </section>
@@ -56,6 +56,25 @@
         </ul>
     </div>
     <script type="text/javascript" src="../script.js"></script>
+    <script type="text/javascript">
+        function swapbanner(banner, saturate = "100%") {
+            document.getElementById("banner").setAttribute("src", banner);
+            document.getElementById("banner").setAttribute("style", `filter: saturate(${saturate});`);
+        }
+
+        if (getMode && getMode === "dark") {
+            swapbanner("../assets/dark.gif", "68.5%");
+        }
+
+        dark_mode.addEventListener("click", () => {
+            if (!body.classList.contains("dark")) {
+                swapbanner("../assets/default.gif");
+            }
+            else {
+                swapbanner("../assets/dark.gif", "68.5%");
+            }
+        });
+    </script>
 </body>
 
 </html>

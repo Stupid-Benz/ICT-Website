@@ -15,7 +15,7 @@ if (getMode && getMode === "dark") {
 	body.classList.add("dark");
 	dark_mode.classList.add("active");
 	swapcss("https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/dark.min.css");
-	swapbanner("dark.gif", "68.5%");
+	swapbanner("../../assets/dark.gif", "68.5%");
 }
 
 dark_mode.addEventListener("click", () => {
@@ -24,12 +24,12 @@ dark_mode.addEventListener("click", () => {
 
 	if (!body.classList.contains("dark")) {
 		swapcss("https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css");
-		swapbanner("default.gif");
+		swapbanner("../../assets/default.gif");
 		return localStorage.setItem("mode", "light");
 	}
 	else {
 		swapcss("https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/dark.min.css");
-		swapbanner("dark.gif", "68.5%");
+		swapbanner("../../assets/dark.gif", "68.5%");
 	}
 	localStorage.setItem("mode", "dark");
 });

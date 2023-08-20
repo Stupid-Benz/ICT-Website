@@ -229,6 +229,10 @@ header #toggle::after {
   font-weight: 500;
   border-radius: 1.5em;
 }
+video {
+  width: 100%;
+  border-radius: 2em;
+}
 .dark-mode {
   position: relative;
   height: 46px;

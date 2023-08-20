@@ -9,15 +9,24 @@
     <meta name="description" content="An online learning platform for ABC Primary School students">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="favicon.ico" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
 </head>
 
 <body>
     <section class="banner" id="sec">
         <header>
             <a href="" class="logo">
-                <img id="banner" src="default.gif" style="filter: saturate(100%);">
+                <img id="banner" src="assets/default.gif" style="filter: saturate(100%);">
             </a>
             <div class="dark-mode"></div>
+            <div class="font-size">
+                <div class="i">
+                    <i class="fas fa-plus"></i>
+                </div>
+                <div class="i">
+                    <i class="fas fa-minus"></i>
+                </div>
+            </div>
             <div id="toggle" onclick="toggle()"></div>
         </header>
         <div class="content">
@@ -26,49 +35,49 @@
             <div class="progress"></div>
             <div class="grid">
                 <a href="csharp" class="visited">C# Class</a>
-                <a href="csharp">C# Class</a>
-                <a href="csharp">C# Class</a>
-                <a href="csharp">C# Class</a>
-                <a href="csharp">C# Class</a>
-                <a href="csharp">C# Class</a>
-                <a href="csharp">C# Class</a>
-                <a href="csharp">C# Class</a>
+                <a href="">C# Class</a>
+                <a href="">C# Class</a>
+                <a href="">C# Class</a>
+                <a href="">C# Class</a>
+                <a href="">C# Class</a>
+                <a href="">C# Class</a>
+                <a href="">C# Class</a>
             </div>
             <h3>Programming</h3>
             <div class="progress"></div>
             <div class="grid">
-                <a href="csharp">C# Class</a>
-                <a href="csharp">C# Class</a>
-                <a href="csharp">C# Class</a>
-                <a href="csharp">C# Class</a>
-                <a href="csharp">C# Class</a>
-                <a href="csharp">C# Class</a>
-                <a href="csharp">C# Class</a>
-                <a href="csharp">C# Class</a>
+                <a href="">C# Class</a>
+                <a href="">C# Class</a>
+                <a href="">C# Class</a>
+                <a href="">C# Class</a>
+                <a href="">C# Class</a>
+                <a href="">C# Class</a>
+                <a href="">C# Class</a>
+                <a href="">C# Class</a>
             </div>
             <h3>Programming</h3>
             <div class="progress"></div>
             <div class="grid">
-                <a href="csharp">C# Class</a>
-                <a href="csharp">C# Class</a>
-                <a href="csharp">C# Class</a>
-                <a href="csharp">C# Class</a>
-                <a href="csharp">C# Class</a>
-                <a href="csharp">C# Class</a>
-                <a href="csharp">C# Class</a>
-                <a href="csharp">C# Class</a>
+                <a href="">C# Class</a>
+                <a href="">C# Class</a>
+                <a href="">C# Class</a>
+                <a href="">C# Class</a>
+                <a href="">C# Class</a>
+                <a href="">C# Class</a>
+                <a href="">C# Class</a>
+                <a href="">C# Class</a>
             </div>
             <h3>Programming</h3>
             <div class="progress"></div>
             <div class="grid">
-                <a href="csharp">C# Class</a>
-                <a href="csharp">C# Class</a>
-                <a href="csharp">C# Class</a>
-                <a href="csharp">C# Class</a>
-                <a href="csharp">C# Class</a>
-                <a href="csharp">C# Class</a>
-                <a href="csharp">C# Class</a>
-                <a href="csharp">C# Class</a>
+                <a href="">C# Class</a>
+                <a href="">C# Class</a>
+                <a href="">C# Class</a>
+                <a href="">C# Class</a>
+                <a href="">C# Class</a>
+                <a href="">C# Class</a>
+                <a href="">C# Class</a>
+                <a href="">C# Class</a>
             </div>
         </div>
     </section>
@@ -79,6 +88,25 @@
         </ul>
     </div>
     <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript">
+        function swapbanner(banner, saturate = "100%") {
+            document.getElementById("banner").setAttribute("src", banner);
+            document.getElementById("banner").setAttribute("style", `filter: saturate(${saturate});`);
+        }
+
+        if (getMode && getMode === "dark") {
+            swapbanner("assets/dark.gif", "68.5%");
+        }
+
+        dark_mode.addEventListener("click", () => {
+            if (!body.classList.contains("dark")) {
+                swapbanner("assets/default.gif");
+            }
+            else {
+                swapbanner("assets/dark.gif", "68.5%");
+            }
+        });
+    </script>
 </body>
 
 </html>
