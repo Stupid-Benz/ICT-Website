@@ -6,7 +6,7 @@ const grids = document.querySelectorAll(".grid");
 const input = document.querySelector(".input");
 
 let font_size = localStorage.getItem("font-size");
-if (font_size != '0') {
+if (font_size != '0' && font_size) {
 	body.style.fontSize = font_size.toString() + "em";
 	if (font_size > 1.5) {
 		grids.forEach((grid) => {
