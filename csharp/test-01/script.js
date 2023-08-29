@@ -61,6 +61,7 @@ add_font_size.addEventListener("click", () => {
 minus_font_size.addEventListener("click", () => {
 	font_size *= 0.8;
 	font_size = Math.round(font_size * 100) / 100;
+	if (font_size <= 0.3) font_size = 1
 	body.style.fontSize = font_size.toString() + "em";
 	localStorage.setItem("font-size", font_size);
 	font.value = font_size;
@@ -76,6 +77,7 @@ font.value = font_size
 font.addEventListener("blur", () => {
 	font_size = font.value;
 	font_size = Math.round(font_size * 100) / 100;
+	if (font_size <= 0.3 || isNaN(font_size)) font_size = 1
 	font.value = font_size;
 	body.style.fontSize = font_size.toString() + "em";
 	localStorage.setItem("font-size", font_size);
@@ -125,6 +127,8 @@ dark_mode.addEventListener("click", () => {
 
 hint.addEventListener("click", () => {
 	hint.classList.toggle("active");
+    let now_01 = test_01_01.value;
+    let now_02 = test_01_02.value;
 
 	if (hint.classList.contains("active")) {
 		hint.value = "Hide Answer";
@@ -138,8 +142,8 @@ hint.addEventListener("click", () => {
 		hint.value = "Show Answer";
 		test_01_01.classList.remove("focus");
 		test_01_02.classList.remove("focus");
-		test_01_01.value = "";
-		test_01_02.value = "";
+		test_01_01.value = now_01;
+		test_01_02.value = now_02;
 		submit.style = "visibility: visible;";
 	}
 })
@@ -162,7 +166,7 @@ function remcl() {
 	}
 }
 
-function checkPassword() {
+function checkAnswer() {
 	const disabled = test_01_01.value.length != 7 || test_01_02.value.length != 9;
 	submit.disabled = disabled;
 	submit.style = (disabled) ? 'background-image: linear-gradient(to right, #ff584d, #ff6359, #ff8880)' : 'background-image: linear-gradient(to right, #32be8f, #38d39f, #32be8f)';
@@ -171,6 +175,6 @@ function checkPassword() {
 inputs.forEach((input) => {
 	input.addEventListener("focus", addcl);
 	input.addEventListener("blur", remcl);
-	input.addEventListener("keyup", checkPassword);
+	input.addEventListener("keyup", checkAnswer);
 	input.value = "";
 });

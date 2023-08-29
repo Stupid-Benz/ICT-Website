@@ -3,12 +3,12 @@
 
 <head>
     <title>ABC Primary School Online Learning Platform</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
     <meta charset="UTF-8">
     <meta name="keywords" content="ABC Primary School, Learning, Platform">
     <meta name="description" content="An online learning platform for ABC Primary School students">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="favicon.ico" />
+    <link rel="icon" href="../favicon.ico" />
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"></script>
 </head>
@@ -23,7 +23,7 @@
             <script>
                 var animation = bodymovin.loadAnimation({
                     container: document.getElementById("animation"),
-                    path: 'assets/animation.json',
+                    path: '../assets/animation.json',
                     render: 'svg',
                     loop: true,
                     autoplay: true,
@@ -34,8 +34,8 @@
     </div>
     <section class="banner" id="sec">
         <header>
-            <a href="" class="logo">
-                <img id="banner" src="assets/default.gif" alt="banner">
+            <a href=".." class="logo">
+                <img id="banner" src="../assets/default.gif" alt="banner">
             </a>
             <div class="dark-mode"></div>
             <div class="font-size">
@@ -50,11 +50,32 @@
             <div id="toggle" onclick="toggle()"></div>
         </header>
         <div class="content">
-            <h2>Welcome<br>This is <span>ABC E-Learning Platform</span></h2>
+            <h2><span>Site Map</span></h2>
             <h3>Programming</h3>
-            <div class="progress"></div>
-            <div class="grid">
-                <a href="csharp" class="visited">C#</a>
+            <div class="grid-site">
+                <div id="csharp">
+                    <a href="../csharp" class="visited">C#</a>
+                    <div class="list" style="display: none;">
+                        <h3>Syntax</h3>
+                        <div class="grid">
+                            <a href="../csharp/hello-world" class="visited">Hello World</a>
+                            <a href="">Variables</a>
+                            <a href="">Data Types</a>
+                            <a href="">Input</a>
+                            <a href="">Operators</a>
+                            <a href="">Strings</a>
+                            <a href="">Booleans</a>
+                            <a href="../csharp/test-01">Test 01</a>
+                        </div>
+                        <h3>Conditional and Loop</h3>
+                        <div class="grid">
+                            <a href="">If Else</a>
+                            <a href="">Switch</a>
+                            <a href="">For Loop</a>
+                            <a href="">While Loop</a>
+                        </div>
+                    </div>
+                </div>
                 <a href="">JavaScript</a>
                 <a href="">Python</a>
                 <a href="">Rust</a>
@@ -64,8 +85,7 @@
                 <a href="">Go</a>
             </div>
             <h3>Language</h3>
-            <div class="progress"></div>
-            <div class="grid">
+            <div class="grid-site">
                 <a href="" title="English">English</a>
                 <a href="" title="Chinese (Traditional)">中文（繁體）</a>
                 <a href="" title="Chinese (Simplified)">中文（简体）</a>
@@ -76,16 +96,14 @@
                 <a href="" title="Thai">ภาษาไทย</a>
             </div>
             <h3>STEM</h3>
-            <div class="progress"></div>
-            <div class="grid">
+            <div class="grid-site">
                 <a href="">Science</a>
                 <a href="">Technology</a>
                 <a href="">Engineering</a>
                 <a href="">Mathematics</a>
             </div>
             <h3>Others</h3>
-            <div class="progress"></div>
-            <div class="grid">
+            <div class="grid-site">
                 <a href="">Visual Arts</a>
                 <a href="">Music</a>
                 <a href="">Physical Education</a>
@@ -96,29 +114,12 @@
     <div id="navigation">
         <ul>
             <li><a href="">Home</a></li>
-            <li><a href="site-map">Site Map</a></li>
+            <li><a href="">Site Map</a></li>
             <li><a style="cursor: pointer;" class="clear">Clear Cache</a></li>
         </ul>
     </div>
+    <script type="text/javascript" src="../script.js"></script>
     <script type="text/javascript" src="script.js"></script>
-    <script type="text/javascript">
-        function swapbanner(banner) {
-            document.getElementById("banner").setAttribute("src", banner);
-        }
-
-        if (getMode && getMode === "dark") {
-            swapbanner("assets/dark.gif");
-        }
-
-        dark_mode.addEventListener("click", () => {
-            if (!body.classList.contains("dark")) {
-                swapbanner("assets/default.gif");
-            }
-            else {
-                swapbanner("assets/dark.gif");
-            }
-        });
-    </script>
 </body>
 
 </html>

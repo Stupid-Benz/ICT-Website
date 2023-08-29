@@ -58,7 +58,7 @@ body.dark .font {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0,0,0,1);
+  background-color: rgba(0, 0, 0, 1);
   z-index: 100000;
 }
 .overlay p {
@@ -67,7 +67,7 @@ body.dark .font {
   left: 50%;
   text-align: center;
   position: absolute;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   font-size: 1.25em;
   font-weight: 700;
 }
@@ -80,7 +80,7 @@ body.dark .font {
   left: 50%;
   font-size: 50px;
   color: white;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
 }
 header {
   position: absolute;
@@ -293,6 +293,16 @@ input {
   grid-template-columns: 45% 45%;
   grid-gap: 0 10%;
 }
+.grid-site {
+  display: grid;
+  transition: 0.5s;
+}
+.grid-site a {
+  width: 100%;
+}
+.grid-site .list {
+  transition: 10s;
+}
 .font-size {
   width: 12.5%;
   display: grid;
@@ -361,5 +371,9 @@ input {
 @media screen and (max-width: 1080px) {
   .overlay {
     display: block;
+  }
+  .grid {
+    grid-template-columns: 45% 45%;
+    grid-gap: 0 10%;
   }
 }

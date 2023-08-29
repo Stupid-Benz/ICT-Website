@@ -36,18 +36,39 @@
                         <i class="far fa-eye-slash" id="togglePassword"></i>
                     </div>
                 </div>
-                <a href="forget-password">Forgot Password?</a>
-                <input type="submit" class="rbtn" value="Login" id="submit" />
-                <div class="sign-up">
-                    <a href="../sign-up">
-                        Create your Account
-                        <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
-                    </a>
-                </div>
+                <a href="forget-password.html">Forgot Password?</a>
+                <input type="submit" class="btn" value="Login" id="submit" />
             </form>
         </div>
     </div>
     <script src="script.js"></script>
+    <script>
+        const togglePassword = document.getElementById("togglePassword");
+        const password = document.getElementById("id_password");
+        const submit = document.getElementById("submit");
+
+        submit.disabled = true;
+
+        function checkPassword() {
+            const disabled = username.value.length < 3 || password.value.length < 8;
+            submit.disabled = disabled;
+        }
+
+        togglePassword.addEventListener("click", function () {
+            const type =
+                password.getAttribute("type") === "password" ? "text" : "password";
+            password.setAttribute("type", type);
+            if (type == "text") {
+                this.className = "far fa-eye";
+            } else {
+                this.className = "far fa-eye-slash";
+            }
+        });
+
+        inputs.forEach((input) => {
+            input.addEventListener("keyup", checkPassword);
+        })
+    </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </body>
 

@@ -26,6 +26,7 @@ body {
   border-radius: 30px;
   box-shadow: 0 0 2em #38d39f;
   margin: 10%;
+  width: 100%;
 }
 
 .logoimg {
@@ -179,12 +180,10 @@ a:hover,
   margin: 15px 0;
 }
 
-.sign-up,
 .return {
   padding-top: 75px;
 }
 
-.sign-up a,
 .return a {
   text-align: center !important;
 }
@@ -212,26 +211,11 @@ a:hover,
   background-position: right;
 }
 
-.rbtn {
-  display: block;
-  width: 100%;
-  height: 50px;
-  border-radius: 25px;
-  outline: none;
-  border: none;
+.btn:disabled,
+.btn[disabled] {
+  pointer-events: none;
+  opacity: .65;
   background-image: linear-gradient(to right, #ff584d, #ff6359, #ff8880);
-  background-size: 200%;
-  font-size: 1.2rem;
-  color: #fff;
-  font-family: "Poppins", sans-serif;
-  text-transform: uppercase;
-  margin: 1rem 0;
-  cursor: pointer;
-  transition: 0.5s;
-}
-
-.btn:hover {
-  background-position: right;
 }
 
 @media screen and (max-width: 1080px) {

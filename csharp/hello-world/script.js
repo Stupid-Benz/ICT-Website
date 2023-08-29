@@ -56,6 +56,7 @@ add_font_size.addEventListener("click", () => {
 minus_font_size.addEventListener("click", () => {
 	font_size *= 0.8;
 	font_size = Math.round(font_size * 100) / 100;
+	if (font_size <= 0.3) font_size = 1
 	body.style.fontSize = font_size.toString() + "em";
 	localStorage.setItem("font-size", font_size);
 	font.value = font_size;
@@ -71,6 +72,7 @@ font.value = font_size
 font.addEventListener("blur", () => {
 	font_size = font.value;
 	font_size = Math.round(font_size * 100) / 100;
+	if (font_size <= 0.3 || isNaN(font_size)) font_size = 1
 	font.value = font_size;
 	body.style.fontSize = font_size.toString() + "em";
 	localStorage.setItem("font-size", font_size);

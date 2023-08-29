@@ -308,27 +308,14 @@ input {
   transition: 0.5s;
   transition: visibility 0s;
 }
-.btn:hover,
-.rbtn:hover {
+.btn:hover {
   background-position: right;
 }
-.rbtn {
-  display: block;
-  width: 100%;
-  height: 50px;
-  border-radius: 25px;
-  outline: none;
-  border: none;
+.btn:disabled,
+.btn[disabled] {
+  pointer-events: none;
+  opacity: .65;
   background-image: linear-gradient(to right, #ff584d, #ff6359, #ff8880);
-  background-size: 200%;
-  font-size: 1.2rem;
-  color: #fff;
-  font-family: "Poppins", sans-serif;
-  text-transform: uppercase;
-  margin: 1rem 0;
-  cursor: pointer;
-  transition: 0.5s;
-  transition: visibility 0s;
 }
 .content h2 {
   color: black;

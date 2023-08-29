@@ -6,7 +6,7 @@ const grids = document.querySelectorAll(".grid");
 const font = document.querySelector(".font");
 const disable_overlay = document.querySelector(".disable-overlay");
 
-document.querySelector(".clear").addEventListener("click", ()=>{
+document.querySelector(".clear").addEventListener("click", () => {
 	localStorage.clear();
 	location.reload();
 });
@@ -16,7 +16,7 @@ if (disableOverlay) {
 	document.querySelector(".overlay").setAttribute("style", "display: none;");
 }
 
-disable_overlay.addEventListener("click", ()=>{
+disable_overlay.addEventListener("click", () => {
 	document.querySelector(".overlay").setAttribute("style", "display: none;");
 	localStorage.setItem("disableOverlay", true);
 })
@@ -57,6 +57,23 @@ else {
 	font_size = '1';
 }
 
+function checkScreen(screen) {
+	if (screen.matches) {
+		font_size = 1.25;
+		font.style.fontSize = "0.5em";
+	}
+	else {
+		font_size = 1;
+		font.style.fontSize = "1em";
+	}
+	font.value = font_size;
+}
+
+checkScreen(window.matchMedia("(max-width: 1080px)"));
+window.matchMedia("(max-width: 1080px)").addListener(checkScreen);
+
+font.value = font_size
+
 add_font_size.addEventListener("click", () => {
 	font_size *= 1.25;
 	font_size = Math.round(font_size * 100) / 100;
@@ -82,6 +99,7 @@ add_font_size.addEventListener("click", () => {
 minus_font_size.addEventListener("click", () => {
 	font_size *= 0.8;
 	font_size = Math.round(font_size * 100) / 100;
+	if (font_size <= 0.3) font_size = 1
 	body.style.fontSize = font_size.toString() + "em";
 	localStorage.setItem("font-size", font_size);
 	font.value = font_size;
@@ -98,10 +116,10 @@ minus_font_size.addEventListener("click", () => {
 	}
 })
 
-font.value = font_size
 font.addEventListener("blur", () => {
 	font_size = font.value;
 	font_size = Math.round(font_size * 100) / 100;
+	if (font_size <= 0.3 || isNaN(font_size)) font_size = 1
 	font.value = font_size;
 	body.style.fontSize = font_size.toString() + "em";
 	localStorage.setItem("font-size", font_size);
